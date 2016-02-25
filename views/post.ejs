@@ -1,0 +1,69 @@
+<!doctype html>
+<html ng-app="hgtApp">
+<head>
+    <title>HGT</title>
+
+   <!-- load bootstrap css -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.css">
+    <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/angularjs-toaster/0.4.9/toaster.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-material-design/0.2.1/css/material.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-material-design/0.2.1/css/ripples.css" /> 
+    <!-- load fontawesome css -->
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css"> 
+    <!-- load angular material min css -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/angular-material/1.0.2/angular-material.min.css">
+    <!-- load local css -->
+    <link rel="stylesheet" href="/assets/css/style.css">
+    <!-- load jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0-rc.0/angular.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+
+    <!-- file upload -->
+    <script src="/assets/ng-file-upload-shim/ng-file-upload-shim.min.js"></script> <!-- for no html5 browsers support -->
+    <script src="/assets/ng-file-upload/ng-file-upload.min.js"></script>
+  
+</head>
+
+<body>
+    <div class="container-fluid" ng-controller='postController'>
+        <div class="container">
+            <%- include nav.ejs %>
+        </div>
+        <div class="container postContainer">
+            <h1>Post Your Garbage</h1>
+            <div class="row">
+                <div class="container">
+        		    <div class="form-group" style="margin-top: 15px">
+        			    <p class="postContentTitle">TITLE</p>
+        			     <input type="text" ng-model="newPost.title" class="form-control" placeholder="not necessary but why not get yourself out there?">
+        		    </div>
+                    <div class="form-group" rows="3">
+        			    <p class="postContentTitle">HASHTAG THAT SHIT</p>
+        			    <input type="text" ng-model="newPost.hashtag" class="form-control" placeholder="this helps users search yo pile!">
+        		    </div>
+        		        <div class="form-group">
+        			        <p class="postContentTitle">ADDRESS</p>
+        			        <input type="text" ng-model="newPost.address" class="form-control" placeholder="Put your stuff on the map!">
+        		        </div>
+                    <br>
+                    <input ngf-select="" ng-model="picFile" name="file" ngf-accept="'image/*'" required="" type="file">
+
+                        <button type="submit" class="btn btn-primary btn-lg submitButton" ng-click="createPost(picFile)">submit</button><br />
+                    </div>
+                </div>
+	       </div>
+        </div>
+
+    <script src="/assets/scripts/app.js"></script>
+    <script src="/assets/scripts/controllers/navController.js">
+    </script>
+    <script src="/assets/scripts/controllers/postController.js">
+    </script>
+   
+
+<%- include logModal.ejs %>
+<%- include signModal.ejs %>
+</div>
+</body>
+</html>

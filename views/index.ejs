@@ -1,0 +1,55 @@
+<!doctype html>
+<html ng-app="hgtApp">
+<head>
+    <title>HGT</title>
+
+    <!-- load bootstrap css -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.css">
+    <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/angularjs-toaster/0.4.9/toaster.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-material-design/0.2.1/css/material.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-material-design/0.2.1/css/ripples.css" /> 
+    <!-- load fontawesome css -->
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css"> 
+    <!-- load angular material min css -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/angular-material/1.0.2/angular-material.min.css">
+    <!-- load local css -->
+    <link rel="stylesheet" href="/assets/css/style.css">
+    <!-- load jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0-rc.0/angular.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>   
+</head>
+       
+<body>
+    <%- include nav.ejs %>
+    <div class="container" ng-controller="navController">
+
+        <!--  CONTENT -->
+        <div class="container">
+            <div class="col-md-5">
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <h1 class="indexText">LETS BRING</H1>
+                <h1 class="indexText">NEW MEANING</H1>
+                <h1 class="indexText">TO PICKING UP</H1>
+                <h1 class="indexText">ON TINDER</H1>
+                    <button href="#" data-toggle="modal" data-target="#signin" type="button" class="btn btn-success btn-lg btn-block">
+                        Sign up, It's Free!</button>
+            </div>
+            <div class="col-md-7">
+                <h1></H1>
+            </div>
+        </div>
+    
+          <script src="/assets/scripts/app.js"></script>
+          <script src="/assets/scripts/controllers/navController.js"></script>
+        <%- include logModal.ejs %>
+        <%- include signModal.ejs %>
+        </div>
+    </body>
+</html>

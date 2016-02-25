@@ -1,0 +1,56 @@
+ <div class="modal fade" tabindex="-1" role="dialog" data-toggle="modal" data-target="#myModal" id="signin">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h2>Sign in</h4>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-md-6">
+                        <center>
+                            <a href="/auth/facebook"class="btn btn-block btn-social-icon btn-facebook faceBookButton">
+                                <span class="fa fa-facebook"></span> Sign in with Facebook
+                            </a>
+                        </center>
+                    </div>
+                    <div class="col-md-6">
+                        <center>
+                            <a href="/auth/google"class="btn btn-block btn-social-icon btn-google googleButton">
+                                <span class="fa fa-google"></span> Sign in with Google
+                            </a>
+                        </center>
+                    </div>
+                    <br><br>
+                <div class="row">
+                    <h4 style="text-align: center"> OR</h4>
+                </div>
+
+                <div class="row">
+                    <center>
+                    <form action="/login" method="post">
+                        <div class="row">
+                            <div class="form-group">
+                                <input type="email" class="form-control" id="exampleInputEmail2" name="email" placeholder="Email">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="form-group">
+                                <input type="password" class="form-control" id="exampleInputName2" name="password" placeholder="Password">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <button type="submit" class="btn btn-primary btn-block" id="signInButton">Sign in</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            </div>
+            <div class="modal-footer">
+                <div class="row">
+                    <p class="registerText">Not a member yet? Click <a href="#" data-toggle="modal" data-target="#register">here</a> to register!</p>
+                </div>
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->      

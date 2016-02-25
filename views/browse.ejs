@@ -1,0 +1,93 @@
+<!doctype html>
+<html ng-app="hgtApp">
+<head>
+    <title>Heavy Garbage Tinder</title>
+     <!-- load bootstrap css -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.css">
+    <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/angularjs-toaster/0.4.9/toaster.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-material-design/0.2.1/css/material.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-material-design/0.2.1/css/ripples.css" /> 
+    <!-- load fontawesome css -->
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css"> 
+    <!-- load angular material min css -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/angular-material/1.0.2/angular-material.min.css">
+    <!-- load local css -->
+    <link rel="stylesheet" href="/assets/css/style.css">
+    <!-- load jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0-rc.0/angular.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+
+    <!-- file upload -->
+    <script src="/assets/ng-file-upload-shim/ng-file-upload-shim.min.js"></script> <!-- for no html5 browsers support -->
+    <script src="/assets/ng-file-upload/ng-file-upload.min.js"></script>
+        
+</head>
+<body>
+  <div class="container-fluid" ng-controller='browseController'>
+    <div class="container">
+    <%- include nav.ejs %>
+  </div>
+  <div class="container browseContainer">
+      <h1>Browse</h1>
+    <div class="row">
+      <div class="container" ng-init="loadPosts()">
+        <div class="col-md-3" ng-repeat="post in posts">
+          
+          <div class="browseItem">
+            <div>
+              <img class="browseImage" src="assets/uploads/{{post.photo}}"> </img>
+            </div>  
+            <div class="browseHashTag">
+                <span class="glyphicon glyphicon-tags"></span>
+                {{post.hashtag}}
+            </div>
+
+            <div class="browseTitle">
+                <strong>{{post.title}}</strong>
+            </div>
+              <div class="browseAddress">
+                {{post.address}}
+               </div>
+          </div>
+
+      </div>
+      </div>
+    </div>
+  <%- include logModal.ejs %>
+  <%- include signModal.ejs %>
+  </div>
+  <script src="../assets/scripts/app.js"></script>
+  <script src="../assets/scripts/controllers/browseController.js"></script>
+  <script src="../assets/scripts/controllers/navController.js"></script>
+  
+</body>
+</html>
+
+<!--
+    <div class="container postContainer">
+    <h1>Browse</h1>
+    <div class="row">
+      <div class="container">
+        <div class="row">
+          <div class="container postBrowseContainer" ng-init="loadPosts()">
+            <div ng-repeat="post in posts">
+              <div class="panel panel-success">
+                <div class="panel-heading browsePostTitle">
+                  <strong>TITLE:</strong> {{post.title}}
+                </div>
+                <div class="panel-body">
+                  <span class="glyphicon glyphicon-tags"></span> 
+                  <strong>Tags:</strong> {{post.hashtag}}
+                </div>
+                <div class="panel-body">
+                  <strong>Address:</strong> {{post.address}}
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  -->
