@@ -16,15 +16,13 @@ var configDB = require('./config/database.js');
 var morgan       = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser   = require('body-parser');
-// var multer       = require('multer');
-// var upload 	     = multer({ storage: options });
-// var fs = require('fs');
-// var path = require('path');
-// var options = multer.diskStorage({ destination : 'assets/uploads/' ,
-//  filename: function (req, file, cb) {
-//  	cb(null, (Math.random().toString(36)+'00000000000000000').slice(2, 10) + Date.now() + path.extname(file.originalname));
-//    }
-//  });
+var allowCrossDomain = function(req, res, next) {
+   res.header('Access-Control-Allow-Origin', '*');
+   res.header('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE');
+   res.header('Access-Control-Allow-Headers', 'Content-Type');
+
+   next();
+}
 
 
 // configuration ===============================================================
@@ -41,7 +39,7 @@ app.use(bodyParser.urlencoded({ extended: true }))
 // parse application/json
 app.use(bodyParser.json())
 app.use(bodyParser.json({ type: 'application/vnd.api+json' }))
- 
+app.use(allowCrossDomain);
 
 app.set('view engine', 'ejs'); // set up ejs for templating
 

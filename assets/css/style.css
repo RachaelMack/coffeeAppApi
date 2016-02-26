@@ -2,22 +2,18 @@ body, html {
    background: none;
 }
 
-/* ENABLING CUSTOM FONTS*/
-@font-face {
-    font-family: 'Seravek';
-    src:url('../fonts/Seravek.ttc');
-}
-@font-face {
-    font-family: 'Candal';
-    src:url('../fonts/Candal.ttf');
-}
 body {
-	background: url("../images/a.jpg") no-repeat fixed 0 0 #000;
+	background: url("../images/background.png") no-repeat fixed 0 0 #000;
 	background-size: cover;
 	/*width: 1440px;
 	height: 900px;
 	overflow-x: hidden;*/
 }
+h1 {
+	color: #250339 !important;
+	text-decoration: none !important;
+}
+
 .top-buffer { 
 	margin-top: 80px; 
 }
@@ -28,22 +24,23 @@ body {
 	width: 100px;
 	height: 100px;
 }
+
 #navLogo {
-	font-family: Candal;
-	color: #ffffff;
-	text-shadow: 2px 2px 2px #000;
+	
+	color: #250339;
 }
+
 #navLinks {
-	font-family: Seravek;
-	color: #FFFFFF;
+	
+	color: #250339;
 	font-size: 20px;
-	font-weight: bold;
 }
+
 #navLinks2 {
-	font-family: Seravek;
-	color: #FFFFFF;
+	
+	color: #250339;
 	font-size: 20px;
-	font-weight: bold;
+	
 	margin-left: -70px;
 }
 .navImg {
@@ -52,17 +49,15 @@ body {
 }
 a {
 	text-decoration: none;
-	color: #FFFFFF;
-	text-shadow: 1px 1px 1px #000;
+	color: #250339;
+
 }
 a:hover {
 	text-decoration: none;
-	color: #f7f6f4;
+	color: #7D7D7D;
 	}
 .indexText {
 	color: #ffffff;
-	font-family: Candal;
-	text-shadow: 1px 1px 1px #000;
 	font-size: 50px;
 	margin-top: -20px;
 	text-align: center;
@@ -123,9 +118,9 @@ input[type="password"] {
 }
 .postContainer {
 	background-color: #ffffff;
-	border-radius: 5px;
+	border-radius: 2px;
 	margin-top: 20px;
-	font-family: Seravek;
+	
 }
 .postContentTitle {
 	margin-bottom: -5px;
@@ -136,7 +131,7 @@ input[type="password"] {
 }
 .browseContainer {
 	background-color: #ffffff;
-	border-radius: 5px;
+	border-radius: 2px;
 	margin-top: 20px;
 	font-family: Seravek;
 	position: absolute;
@@ -146,14 +141,14 @@ input[type="password"] {
 }
 .browseItem {
 	/*box-shadow: 10px 10px 5px #888888;*/
-	border-radius: 10px;
-	border: 4px solid #888888;
+	border-radius: 5px;
+	border: 1px solid #888888;
 	margin-bottom: 30px;
 }
 .browseImage {
 	width: 100%;
 	border-radius: 5px 5px 0px 0px;
-	border-bottom: 4px solid #888888;
+	border-bottom: 1px solid #888888;
 }
 .browseHashTag {
 	text-align: left;
