@@ -154,6 +154,74 @@ module.exports = function(app, passport) {
         });
     });
 
+    app.post('/api/phoneposts', upload.single('file'), isApiLoggedIn, function(req, res) {
+
+          var postInfo = JSON.parse(req.body.info);
+
+          var postColumns = {
+            text : postInfo.text,
+            price: postInfo.price,
+            address: postInfo.address,
+            done : false
+          };
+          console.log("post Columns pass 1");
+          console.log(todoColumns);
+
+          User.findById(req.body.user_id, function(err, user) {
+              if (err)
+                  res.send({ status: 'error', message: "We're sorry, but there was an error with your request"});
+
+              // not found
+              if (!user) {
+                  res.send({ status: 'error', message: "You're not real!"});
+              }
+
+              postColumns.author = user.local.display_name;
+              console.log("post Columns pass 2");
+              console.log(postColumns);
+
+              // save the image (if applicable)
+              if (req.file.filename != "") {
+
+                postColumns.photo = req.file.filename;
+                console.log("post Columns pass 3");
+                console.log(todoColumns);
+
+                // there is an image found, save the image data and continue 
+                if (err)
+                  console.log(err);
+
+                // create a todo, information comes from AJAX request from Angular
+                Post.create(postColumns, function(err, todo) {
+                    if (err)
+                        res.send(err);
+                });
+              }
+              else {
+
+                // No image, save with the empty image variable
+                postColumns.photo = "";
+                console.log("Post Columns pass 4");
+                console.log(todoColumns);
+
+                // create a todo, information comes from AJAX request from Angular
+                Post.create(todoColumns, function(err, posts) {
+                    if (err)
+                        res.send(err);
+
+                    // get and return all the todos after you create another
+                    Post.find(function(err, posts) {
+                        if (err)
+                            res.send(err)
+                        return res.json(posts);
+                    });
+                });
+              }
+          });
+
+      });
+    };
+
 
     // facebook -------------------------------
 
