@@ -159,13 +159,13 @@ module.exports = function(app, passport) {
           var postInfo = JSON.parse(req.body.info);
 
           var postColumns = {
-            text : postInfo.text,
-            price: postInfo.price,
+            title : postInfo.title,
+            hashtag: postInfo.hashtag,
             address: postInfo.address,
             done : false
           };
           console.log("post Columns pass 1");
-          console.log(todoColumns);
+          console.log(postColumns);
 
           User.findById(req.body.user_id, function(err, user) {
               if (err)
@@ -185,14 +185,14 @@ module.exports = function(app, passport) {
 
                 postColumns.photo = req.file.filename;
                 console.log("post Columns pass 3");
-                console.log(todoColumns);
+                console.log(postColumns);
 
                 // there is an image found, save the image data and continue 
                 if (err)
                   console.log(err);
 
                 // create a todo, information comes from AJAX request from Angular
-                Post.create(postColumns, function(err, todo) {
+                Post.create(postColumns, function(err, post) {
                     if (err)
                         res.send(err);
                 });
@@ -205,7 +205,7 @@ module.exports = function(app, passport) {
                 console.log(todoColumns);
 
                 // create a todo, information comes from AJAX request from Angular
-                Post.create(todoColumns, function(err, posts) {
+                Post.create(postColumns, function(err, posts) {
                     if (err)
                         res.send(err);
 
