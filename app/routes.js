@@ -1,5 +1,6 @@
 var Post = require('./models/posts.js');
 var Token = require('./models/token');
+var User = require('./models/user');
 
 // REQUIRED FOR IMAGE UPLOAD
 var multer = require('multer');
