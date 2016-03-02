@@ -196,6 +196,8 @@ module.exports = function(app, passport) {
           Post.create(postColumns, function(err, post) {
             if (err)
               res.send(err);
+
+            return next();
           });
         }
         else {
@@ -203,7 +205,7 @@ module.exports = function(app, passport) {
           // No image, save with the empty image variable
           postColumns.photo = "";
           console.log("Post Columns pass 4");
-          console.log(todoColumns);
+          console.log(postColumns);
 
           // create a todo, information comes from AJAX request from Angular
           Post.create(postColumns, function(err, posts) {
