@@ -169,7 +169,7 @@ module.exports = function(app, passport) {
 
           User.findById(req.body.user_id, function(err, user) {
               if (err)
-                  res.send({ status: 'error', message: "We're sorry, but there was an error with your request"});
+                  res.send({ status: 'error', message: "We're sorry, but  n error with your request"});
 
               // not found
               if (!user) {
@@ -363,8 +363,6 @@ module.exports = function(app, passport) {
         });
     });
 
-
-};
 
 // route middleware to make sure a user is logged in
 function isLoggedIn(req, res, next) {
