@@ -314,7 +314,7 @@ module.exports = function(app, passport) {
            address: req.body.info.address,
            photo: req.file.filename,
             done : false
-        }, function(err, todo) {
+        }, function(err, post) {
             if (err)
                 res.send(err);
         });
