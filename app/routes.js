@@ -145,8 +145,8 @@ module.exports = function(app, passport) {
               return res.json(err);
 
           // not found
-          if (!tokenRes) {
-              res.json({ status: 'error'});
+          if (!tokenRes || tokenRes.length <= 0) {
+            return res.json({ status: 'error'});
           }
 
           // all checks pass, we're good!
