@@ -31,20 +31,20 @@
             <%- include nav.ejs %>
         </div>
         <div class="container postContainer">
-            <h1>Post Your Garbage</h1>
+            <h1>Create Your Cup</h1>
             <div class="row">
                 <div class="container">
         		    <div class="form-group" style="margin-top: 15px">
-        			    <p class="postContentTitle">TITLE</p>
-        			     <input type="text" ng-model="newPost.title" class="form-control" placeholder="not necessary but why not get yourself out there?">
+        			    <p class="postContentTitle">FLAVOUR</p>
+        			     <input type="text" ng-model="newPost.title" class="form-control" placeholder="What is the name of your flavour?">
         		    </div>
                     <div class="form-group" rows="3">
-        			    <p class="postContentTitle">HASHTAG THAT SHIT</p>
-        			    <input type="text" ng-model="newPost.hashtag" class="form-control" placeholder="this helps users search yo pile!">
+        			    <p class="postContentTitle">TAGS</p>
+        			    <input type="text" ng-model="newPost.hashtag" class="form-control" placeholder="is this flavour coffee, tea, or a specialty blend">
         		    </div>
         		        <div class="form-group">
-        			        <p class="postContentTitle">ADDRESS</p>
-        			        <input type="text" ng-model="newPost.address" class="form-control" placeholder="Put your stuff on the map!">
+        			        <p class="postContentTitle">LOCATION</p>
+        			        <input type="text" ng-model="newPost.address" class="form-control" placeholder="Where did you find this flavour?">
         		        </div>
                     <br>
                     <input ngf-select="" ng-model="picFile" name="file" ngf-accept="'image/*'" required="" type="file">
