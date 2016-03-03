@@ -177,10 +177,6 @@ module.exports = function(app, passport) {
           res.send({ status: 'error', message: "You're not real!"});
         }
 
-        postColumns.author = user.local.display_name;
-        console.log("post Columns pass 2");
-        console.log(postColumns);
-
         // save the image (if applicable)
         if (req.file.filename != "") {
 
@@ -197,7 +193,7 @@ module.exports = function(app, passport) {
             if (err)
               res.send(err);
 
-            return next();
+            // return next();
           });
         }
         else {
