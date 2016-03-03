@@ -193,7 +193,7 @@ module.exports = function(app, passport) {
             if (err)
               res.send(err);
 
-            return next();
+            res.send({ status: 'Success', message: "You're photo was uploaded"});
           });
         }
         else {
