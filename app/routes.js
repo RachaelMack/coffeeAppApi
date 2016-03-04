@@ -193,7 +193,10 @@ module.exports = function(app, passport) {
             if (err)
               res.send(err);
 
-            return next();
+            Post.find({}, function(err, posts){
+                return res.json(posts);
+            })
+            
           });
         }
         else {
